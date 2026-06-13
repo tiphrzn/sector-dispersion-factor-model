@@ -18,6 +18,7 @@ def identify_dispersion_regimes(dispersion_series:pd.Series, window:int=252, thr
     roll_mean=dispersion_series.rolling(window=window).mean()
     roll_std=dispersion_series.rolling(window=window).std()
 
+    #calcul du z-score pour mesurer à quelle distance se trouve une donnée par rapport à sa moyenne
     z_score=(dispersion_series-roll_mean)/roll_std
 
     regimes=pd.Series('Normal', index=dispersion_series.index)
