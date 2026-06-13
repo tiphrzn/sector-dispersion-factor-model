@@ -13,7 +13,7 @@ def calculate_cross_sectional_dispersion(df_returns: pd.DataFrame, method: str='
     pd.Series: A Series containing the cross-sectional dispersion for each date.
     """
 
-    mean_returns_sectors=df_returns.mean(axis=1=True)
+    mean_returns_sectors=df_returns.mean(axis=1)
     differences=df_returns.sub(mean_returns_sectors, axis=0)
 
     N= df_returns.shape[1]
